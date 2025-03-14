@@ -4,7 +4,7 @@
 #include <sstream>
 using namespace std;
 
-// Clasa de bază Vehicul
+
 class Vehicul {
 protected:
     string numarInmatriculare;
@@ -23,7 +23,7 @@ public:
     }
 };
 
-// Clasa Masina
+
 class Masina : public Vehicul {
 public:
     Masina(string numar, int intrare, int iesire)
@@ -35,7 +35,7 @@ public:
     }
 };
 
-// Clasa Motocicleta
+
 class Motocicleta : public Vehicul {
 public:
     Motocicleta(string numar, int intrare, int iesire)
@@ -47,7 +47,7 @@ public:
     }
 };
 
-// Clasa Camion
+
 class Camion : public Vehicul {
 public:
     Camion(string numar, int intrare, int iesire)
@@ -59,7 +59,7 @@ public:
     }
 };
 
-// Clasa Bicicleta
+
 class Bicicleta : public Vehicul {
 public:
     Bicicleta(string numar, int intrare, int iesire)
@@ -74,7 +74,7 @@ public:
     }
 };
 
-// Funcție pentru citirea datelor din fișier
+
 vector<Vehicul*> citesteVehicule(string numeFisier) {
     ifstream fisier(numeFisier);
     vector<Vehicul*> vehicule;
@@ -92,12 +92,12 @@ vector<Vehicul*> citesteVehicule(string numeFisier) {
     return vehicule;
 }
 
-// Funcție principală
+
 int main() {
     vector<Vehicul*> vehicule = citesteVehicule("parcare.txt");
     for (Vehicul* v : vehicule) {
         v->afisare();
-        delete v; // Eliberare memorie
+        delete v; 
     }
     return 0;
 }
